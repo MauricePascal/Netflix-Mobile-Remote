@@ -7,20 +7,17 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
 from selenium.common.exceptions import TimeoutException
-from selenium.common.exceptions import NoSuchElementException
 
 
 class Instance:
     def __init__(self):
         self.driver = None
-        self.logged_in = False
-        self.email_address = "timmlariviere112@gmail.com"
-        self.pwd = "Sascha112"
+        self.email_address = None
+        self.pwd = None
 
     def open_selenium(self):
         self.driver = webdriver.Chrome("C:\\Users\\lariv\\AppData\\Local\\Google\\Chrome\\User Data\\chromedriver.exe")
         self.driver.get("https://netflix.com/")
-        self.login()
 
     def login(self):
         try:
@@ -35,9 +32,11 @@ class Instance:
         except TimeoutException:
             print("Failed!")
 
-    @staticmethod
     async def ws_receive(self, websocket, path):
         json_data = json.load(await websocket.recv())
+        self.email_address = json_data["email_address"]
+        self.pwd = json_data["pwd"]
+        self.login()
 
     def start(self):
         self.open_selenium()
