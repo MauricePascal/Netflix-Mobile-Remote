@@ -136,12 +136,7 @@ dmypy.json
 *.iml
 Remote/.gradle
 Remote/local.properties
-Remote/.idea/caches
-Remote/.idea/libraries
-Remote/.idea/modules.xml
-Remote/.idea/workspace.xml
-Remote/.idea/navEditor.xml
-Remote/.idea/assetWizardSettings.xml
+Remote/.idea/
 Remote/.DS_Store
 Remote/build
 Remote/captures
