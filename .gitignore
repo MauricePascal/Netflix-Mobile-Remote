@@ -105,7 +105,8 @@ celerybeat.pid
 .env
 .venv
 env/
-venv/
+/venv
+GUIServer/venv/
 ENV/
 env.bak/
 venv.bak/
@@ -130,3 +131,4 @@ dmypy.json
 
 # PyCharm
 .idea
+/GUIServer/.idea
