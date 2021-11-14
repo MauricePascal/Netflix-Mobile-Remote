@@ -33,7 +33,9 @@ class Instance:
             print("Failed!")
 
     async def ws_receive(self, websocket, path):
-        json_data = json.load(await websocket.recv())
+        data = await websocket.recv()
+        print(str(data))
+        json_data = json.load(data)
         self.email_address = json_data["email_address"]
         self.pwd = json_data["pwd"]
         self.login()
